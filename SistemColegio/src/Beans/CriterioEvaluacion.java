@@ -1,15 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Beans;
 
-/**
- *
- * @author ALEXANDER
- */
+
 public class CriterioEvaluacion {
+ 
+ private  Integer idcriterio;
+  private  Integer  idevaluacion;
+
+    public CriterioEvaluacion() {
+    }
+
+    public CriterioEvaluacion(Integer idcriterio, Integer idevaluacion) {
+        this.idcriterio = idcriterio;
+        this.idevaluacion = idevaluacion;
+    }
+
+    public Integer getIdcriterio() {
+        return idcriterio;
+    }
+
+    public void setIdcriterio(Integer idcriterio) {
+        this.idcriterio = idcriterio;
+    }
+
+    public Integer getIdevaluacion() {
+        return idevaluacion;
+    }
+
+    public void setIdevaluacion(Integer idevaluacion) {
+        this.idevaluacion = idevaluacion;
+    }
+  
+  
     
 }

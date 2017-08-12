@@ -3,29 +3,29 @@ package Beans;
 import java.sql.Date;
 
 public class Anio {
-    private Integer idanio;
+    private Integer Idanio;
     private Date Fechin;
     private Date Fechfin;
 
     public Anio() {
     }
 
-    public Anio(Integer idanio) {
-        this.idanio = idanio;
+    public Anio(Integer Idanio) {
+        this.Idanio = Idanio;
     }
 
-    public Anio(Integer idanio, Date Fechin, Date Fechfin) {
-        this.idanio = idanio;
+    public Anio(Integer Idanio, Date Fechin, Date Fechfin) {
+        this.Idanio = Idanio;
         this.Fechin = Fechin;
         this.Fechfin = Fechfin;
     }
 
     public Integer getIdanio() {
-        return idanio;
+        return Idanio;
     }
 
-    public void setIdanio(Integer idanio) {
-        this.idanio = idanio;
+    public void setIdanio(Integer Idanio) {
+        this.Idanio = Idanio;
     }
 
     public Date getFechin() {
@@ -43,6 +43,6 @@ public class Anio {
     public void setFechfin(Date Fechfin) {
         this.Fechfin = Fechfin;
     }
-    
+
     
 }

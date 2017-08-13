@@ -11,6 +11,7 @@ public class Alumno {
  private String apepatalum;
  private String apematalum;
  private String sexo;
+ private Matricula matricula;
 
     public Alumno() {
     }
@@ -19,13 +20,14 @@ public class Alumno {
         this.idalum = idalum;
     }
 
-    public Alumno(Integer idalum, String codalum, String nomalum, String apepatalum, String apematalum, String sexo) {
+    public Alumno(Integer idalum, String codalum, String nomalum, String apepatalum, String apematalum, String sexo, Matricula matricula) {
         this.idalum = idalum;
         this.codalum = codalum;
         this.nomalum = nomalum;
         this.apepatalum = apepatalum;
         this.apematalum = apematalum;
         this.sexo = sexo;
+        this.matricula = matricula;
     }
 
     public Integer getIdalum() {
@@ -76,10 +78,14 @@ public class Alumno {
         this.sexo = sexo;
     }
 
-   
- 
- 
- 
+    public Matricula getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
+    }
+
     
-    
+
 }

@@ -10,8 +10,8 @@ public class Asistencia {
 private Integer idasist;
 private String condicion;
 private Date  fechasist;
-private Integer idhora; 
-private Integer idalum ;
+private Horario horario;
+private Alumno Alumno;
 
     public Asistencia() {
     }
@@ -20,12 +20,12 @@ private Integer idalum ;
         this.idasist = idasist;
     }
 
-    public Asistencia(Integer idasist, String condicion, Date fechasist, Integer idhora, Integer idalum) {
+    public Asistencia(Integer idasist, String condicion, Date fechasist, Horario horario, Alumno Alumno) {
         this.idasist = idasist;
         this.condicion = condicion;
         this.fechasist = fechasist;
-        this.idhora = idhora;
-        this.idalum = idalum;
+        this.horario = horario;
+        this.Alumno = Alumno;
     }
 
     public Integer getIdasist() {
@@ -52,22 +52,23 @@ private Integer idalum ;
         this.fechasist = fechasist;
     }
 
-    public Integer getIdhora() {
-        return idhora;
+    public Horario getHorario() {
+        return horario;
     }
 
-    public void setIdhora(Integer idhora) {
-        this.idhora = idhora;
+    public void setHorario(Horario horario) {
+        this.horario = horario;
     }
 
-    public Integer getIdalum() {
-        return idalum;
+    public Alumno getAlumno() {
+        return Alumno;
     }
 
-    public void setIdalum(Integer idalum) {
-        this.idalum = idalum;
+    public void setAlumno(Alumno Alumno) {
+        this.Alumno = Alumno;
     }
 
+   
 
     
 }

@@ -8,8 +8,8 @@ public class Boleta {
  private Integer  pritri;
  private Integer  segtri;
  private Integer  tertri;
- private Integer  idanio;
- private Integer  idmatr;
+ private Anio  anio;
+ private Matricula matricula;
 
     public Boleta() {
     }
@@ -18,13 +18,13 @@ public class Boleta {
         this.idbol = idbol;
     }
 
-    public Boleta(Integer idbol, Integer pritri, Integer segtri, Integer tertri, Integer idanio, Integer idmatr) {
+    public Boleta(Integer idbol, Integer pritri, Integer segtri, Integer tertri, Anio anio, Matricula matricula) {
         this.idbol = idbol;
         this.pritri = pritri;
         this.segtri = segtri;
         this.tertri = tertri;
-        this.idanio = idanio;
-        this.idmatr = idmatr;
+        this.anio = anio;
+        this.matricula = matricula;
     }
 
     public Integer getIdbol() {
@@ -59,23 +59,21 @@ public class Boleta {
         this.tertri = tertri;
     }
 
-    public Integer getIdanio() {
-        return idanio;
+    public Anio getAnio() {
+        return anio;
     }
 
-    public void setIdanio(Integer idanio) {
-        this.idanio = idanio;
+    public void setAnio(Anio anio) {
+        this.anio = anio;
     }
 
-    public Integer getIdmatr() {
-        return idmatr;
+    public Matricula getMatricula() {
+        return matricula;
     }
 
-    public void setIdmatr(Integer idmatr) {
-        this.idmatr = idmatr;
+    public void setMatricula(Matricula matricula) {
+        this.matricula = matricula;
     }
- 
- 
- 
- 
+
+    
 }

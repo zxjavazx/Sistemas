@@ -4,32 +4,36 @@ package Beans;
 
 public class CriterioEvaluacion {
  
- private  Integer idcriterio;
-  private  Integer  idevaluacion;
+ private  Criterio criterio ;
+  private  Evaluacion evaluacion;
 
     public CriterioEvaluacion() {
     }
 
-    public CriterioEvaluacion(Integer idcriterio, Integer idevaluacion) {
-        this.idcriterio = idcriterio;
-        this.idevaluacion = idevaluacion;
+    public CriterioEvaluacion(Criterio criterio, Evaluacion evaluacion) {
+        this.criterio = criterio;
+        this.evaluacion = evaluacion;
     }
 
-    public Integer getIdcriterio() {
-        return idcriterio;
+    public Criterio getCriterio() {
+        return criterio;
     }
 
-    public void setIdcriterio(Integer idcriterio) {
-        this.idcriterio = idcriterio;
+    public void setCriterio(Criterio criterio) {
+        this.criterio = criterio;
     }
 
-    public Integer getIdevaluacion() {
-        return idevaluacion;
+    public Evaluacion getEvaluacion() {
+        return evaluacion;
     }
 
-    public void setIdevaluacion(Integer idevaluacion) {
-        this.idevaluacion = idevaluacion;
+    public void setEvaluacion(Evaluacion evaluacion) {
+        this.evaluacion = evaluacion;
     }
+
+ 
+
+  
   
   
     

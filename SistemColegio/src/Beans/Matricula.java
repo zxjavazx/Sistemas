@@ -10,10 +10,10 @@ public class Matricula {
 
 private Integer idmatr;
 private Date fechmatr;
-private Integer idanio;
-private Integer idsecc;
-private Integer idbol;
-private Integer  idalum;
+private Anio anio;
+private Seccion seccion;
+private Boleta boleta;
+private Alumno alumno;
 
     public Matricula() {
     }
@@ -22,13 +22,13 @@ private Integer  idalum;
         this.idmatr = idmatr;
     }
 
-    public Matricula(Integer idmatr, Date fechmatr, Integer idanio, Integer idsecc, Integer idbol, Integer idalum) {
+    public Matricula(Integer idmatr, Date fechmatr, Anio anio, Seccion seccion, Boleta boleta, Alumno alumno) {
         this.idmatr = idmatr;
         this.fechmatr = fechmatr;
-        this.idanio = idanio;
-        this.idsecc = idsecc;
-        this.idbol = idbol;
-        this.idalum = idalum;
+        this.anio = anio;
+        this.seccion = seccion;
+        this.boleta = boleta;
+        this.alumno = alumno;
     }
 
     public Integer getIdmatr() {
@@ -47,39 +47,38 @@ private Integer  idalum;
         this.fechmatr = fechmatr;
     }
 
-    public Integer getIdanio() {
-        return idanio;
+    public Anio getAnio() {
+        return anio;
     }
 
-    public void setIdanio(Integer idanio) {
-        this.idanio = idanio;
+    public void setAnio(Anio anio) {
+        this.anio = anio;
     }
 
-    public Integer getIdsecc() {
-        return idsecc;
+    public Seccion getSeccion() {
+        return seccion;
     }
 
-    public void setIdsecc(Integer idsecc) {
-        this.idsecc = idsecc;
+    public void setSeccion(Seccion seccion) {
+        this.seccion = seccion;
     }
 
-    public Integer getIdbol() {
-        return idbol;
+    public Boleta getBoleta() {
+        return boleta;
     }
 
-    public void setIdbol(Integer idbol) {
-        this.idbol = idbol;
+    public void setBoleta(Boleta boleta) {
+        this.boleta = boleta;
     }
 
-    public Integer getIdalum() {
-        return idalum;
+    public Alumno getAlumno() {
+        return alumno;
     }
 
-    public void setIdalum(Integer idalum) {
-        this.idalum = idalum;
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
     }
 
-
-
+    
 
 }

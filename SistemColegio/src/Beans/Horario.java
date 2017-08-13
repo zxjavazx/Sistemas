@@ -10,8 +10,8 @@ private Integer idhora;
 private String diasemana;
 private  Date horini;
 private  Date  horfin;
-private Integer idanio;
-private Integer  idgrad;
+private Anio anio;
+private Grado grado;
 
     public Horario() {
     }
@@ -20,13 +20,13 @@ private Integer  idgrad;
         this.idhora = idhora;
     }
 
-    public Horario(Integer idhora, String diasemana, Date horini, Date horfin, Integer idanio, Integer idgrad) {
+    public Horario(Integer idhora, String diasemana, Date horini, Date horfin, Anio anio, Grado grado) {
         this.idhora = idhora;
         this.diasemana = diasemana;
         this.horini = horini;
         this.horfin = horfin;
-        this.idanio = idanio;
-        this.idgrad = idgrad;
+        this.anio = anio;
+        this.grado = grado;
     }
 
     public Integer getIdhora() {
@@ -61,24 +61,23 @@ private Integer  idgrad;
         this.horfin = horfin;
     }
 
-    public Integer getIdanio() {
-        return idanio;
+    public Anio getAnio() {
+        return anio;
     }
 
-    public void setIdanio(Integer idanio) {
-        this.idanio = idanio;
+    public void setAnio(Anio anio) {
+        this.anio = anio;
     }
 
-    public Integer getIdgrad() {
-        return idgrad;
+    public Grado getGrado() {
+        return grado;
     }
 
-    public void setIdgrad(Integer idgrad) {
-        this.idgrad = idgrad;
+    public void setGrado(Grado grado) {
+        this.grado = grado;
     }
+
    
-
-
     
 }
 

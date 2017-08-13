@@ -8,7 +8,7 @@ public class Criterio {
     
 private Integer idcrit;
 private String nomcrit;
-private Integer idarea;
+private Area area;
 
     public Criterio() {
     }
@@ -17,10 +17,10 @@ private Integer idarea;
         this.idcrit = idcrit;
     }
 
-    public Criterio(Integer idcrit, String nomcrit, Integer idarea) {
+    public Criterio(Integer idcrit, String nomcrit, Area area) {
         this.idcrit = idcrit;
         this.nomcrit = nomcrit;
-        this.idarea = idarea;
+        this.area = area;
     }
 
     public Integer getIdcrit() {
@@ -39,13 +39,15 @@ private Integer idarea;
         this.nomcrit = nomcrit;
     }
 
-    public Integer getIdarea() {
-        return idarea;
+    public Area getArea() {
+        return area;
     }
 
-    public void setIdarea(Integer idarea) {
-        this.idarea = idarea;
+    public void setArea(Area area) {
+        this.area = area;
     }
+
+    
 
 
     

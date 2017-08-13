@@ -9,8 +9,8 @@ public class Evaluacion {
 private  Integer ideval;
 private Date fecheval;
 private Integer nota;
-private Integer  idbol;
-private Integer idalum ;  
+private Boleta boleta;
+private Alumno alumno;  
 
     public Evaluacion() {
     }
@@ -19,12 +19,12 @@ private Integer idalum ;
         this.ideval = ideval;
     }
 
-    public Evaluacion(Integer ideval, Date fecheval, Integer nota, Integer idbol, Integer idalum) {
+    public Evaluacion(Integer ideval, Date fecheval, Integer nota, Boleta boleta, Alumno alumno) {
         this.ideval = ideval;
         this.fecheval = fecheval;
         this.nota = nota;
-        this.idbol = idbol;
-        this.idalum = idalum;
+        this.boleta = boleta;
+        this.alumno = alumno;
     }
 
     public Integer getIdeval() {
@@ -51,21 +51,23 @@ private Integer idalum ;
         this.nota = nota;
     }
 
-    public Integer getIdbol() {
-        return idbol;
+    public Boleta getBoleta() {
+        return boleta;
     }
 
-    public void setIdbol(Integer idbol) {
-        this.idbol = idbol;
+    public void setBoleta(Boleta boleta) {
+        this.boleta = boleta;
     }
 
-    public Integer getIdalum() {
-        return idalum;
+    public Alumno getAlumno() {
+        return alumno;
     }
 
-    public void setIdalum(Integer idalum) {
-        this.idalum = idalum;
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
     }
+
+  
     
     
 }

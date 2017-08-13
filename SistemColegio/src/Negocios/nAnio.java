@@ -95,7 +95,6 @@ public class nAnio {
     public static void main(String[] args) {
         nAnio nanio = new nAnio();
         Anio anio = new Anio();
-        anio.setIdanio(1);
         anio.setFechin("02/01/2017");
         anio.setFechfin("02/12/2017");
         nanio.RegistrarAnio(anio);

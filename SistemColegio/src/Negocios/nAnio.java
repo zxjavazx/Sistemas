@@ -11,7 +11,7 @@ public class nAnio {
     ResultSet rs;
     public Integer getId(){
         try {
-            String sql = "select nextval('anio_idanio_seq') as idanio;";
+            String sql = "select nextval('año_idanio_seq') as idanio;";
             
             Integer id = 0;
 
@@ -36,14 +36,14 @@ public class nAnio {
     public List ListarAnio(){
         try {
             List<Anio> lstalumnos = new ArrayList<Anio>();
-            String sql = "select * from anio";
+            String sql = "select * from año";
             rs = con.RecuperarSQL(sql);
             
             while(rs.next()){
                 Anio obj = new Anio();
                 obj.setIdanio(rs.getInt("idanio"));
-                obj.setFechin(rs.getDate("fechin"));
-                obj.setFechfin(rs.getDate("fechfin"));
+                obj.setFechin(rs.getString("fechin"));
+                obj.setFechfin(rs.getString("fechfin"));
                 lstalumnos.add(obj);
             }
             return lstalumnos;
@@ -58,10 +58,10 @@ public class nAnio {
         try {
             obj.setIdanio(getId());
             
-            String sql = "insert into anio(";
+            String sql = "insert into año(";
             sql = sql + " idanio";
             sql = sql + ",fechin";
-            sql = sql + ",fecfin";
+            sql = sql + ",fechfin";
             sql = sql + ")values(";
             sql = sql + "'"+obj.getIdanio()+"'";
             sql = sql + ",'"+obj.getFechin() + "'";
@@ -79,9 +79,9 @@ public class nAnio {
         try {
             obj.setIdanio(getId());
             
-            String sql = "update anio set(";
+            String sql = "update año set(";
             sql = sql + ",fechin = '"+obj.getFechin() + "'";
-            sql = sql + ",fecfin = '"+obj.getFechfin() + "'";
+            sql = sql + ",fechfin = '"+obj.getFechfin() + "'";
             sql = sql + " where";
             sql = sql + " idanio = '"+obj.getIdanio()+"'";
             
@@ -90,5 +90,14 @@ public class nAnio {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+    
+    public static void main(String[] args) {
+        nAnio nanio = new nAnio();
+        Anio anio = new Anio();
+        anio.setIdanio(1);
+        anio.setFechin("02/01/2017");
+        anio.setFechfin("02/12/2017");
+        nanio.RegistrarAnio(anio);
     }
 }

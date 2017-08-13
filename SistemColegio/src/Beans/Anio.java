@@ -1,11 +1,9 @@
 package Beans;
 
-import java.sql.Date;
-
 public class Anio {
     private Integer Idanio;
-    private Date Fechin;
-    private Date Fechfin;
+    private String Fechin;
+    private String Fechfin;
 
     public Anio() {
     }
@@ -14,7 +12,7 @@ public class Anio {
         this.Idanio = Idanio;
     }
 
-    public Anio(Integer Idanio, Date Fechin, Date Fechfin) {
+    public Anio(Integer Idanio, String Fechin, String Fechfin) {
         this.Idanio = Idanio;
         this.Fechin = Fechin;
         this.Fechfin = Fechfin;
@@ -28,19 +26,19 @@ public class Anio {
         this.Idanio = Idanio;
     }
 
-    public Date getFechin() {
+    public String getFechin() {
         return Fechin;
     }
 
-    public void setFechin(Date Fechin) {
+    public void setFechin(String Fechin) {
         this.Fechin = Fechin;
     }
 
-    public Date getFechfin() {
+    public String getFechfin() {
         return Fechfin;
     }
 
-    public void setFechfin(Date Fechfin) {
+    public void setFechfin(String Fechfin) {
         this.Fechfin = Fechfin;
     }
 

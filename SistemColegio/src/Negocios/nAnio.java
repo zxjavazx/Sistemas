@@ -36,7 +36,12 @@ public class nAnio {
     public List ListarAnio(){
         try {
             List<Anio> lstalumnos = new ArrayList<Anio>();
-            String sql = "select * from año";
+            String sql = "select";
+            sql = sql + " idanio";
+            sql = sql + ",fechin";
+            sql = sql + ",fechfin";
+            sql = sql + " from anio";
+            sql = sql + ";";
             rs = con.RecuperarSQL(sql);
             
             while(rs.next()){
@@ -48,7 +53,7 @@ public class nAnio {
             }
             return lstalumnos;
         } catch (Exception e) {
-            
+            System.out.println(e.getMessage());
             return null;
         }
         
@@ -90,13 +95,5 @@ public class nAnio {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }
-    
-    public static void main(String[] args) {
-        nAnio nanio = new nAnio();
-        Anio anio = new Anio();
-        anio.setFechin("02/01/2017");
-        anio.setFechfin("02/12/2017");
-        nanio.RegistrarAnio(anio);
     }
 }

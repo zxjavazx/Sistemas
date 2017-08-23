@@ -2,9 +2,9 @@ package Beans;
 public class Tutor {
     private Integer Idtut;
     private String Descripcion;
-    private Anio anio;
-    private Seccion seccion;
-    private Docente docente;
+    private Anio Anio;
+    private Seccion Seccion;
+    private Docente Docente;
 
     public Tutor() {
     }
@@ -13,12 +13,12 @@ public class Tutor {
         this.Idtut = Idtut;
     }
 
-    public Tutor(Integer Idtut, String Descripcion, Anio anio, Seccion seccion, Docente docente) {
+    public Tutor(Integer Idtut, String Descripcion, Anio Anio, Seccion Seccion, Docente Docente) {
         this.Idtut = Idtut;
         this.Descripcion = Descripcion;
-        this.anio = anio;
-        this.seccion = seccion;
-        this.docente = docente;
+        this.Anio = Anio;
+        this.Seccion = Seccion;
+        this.Docente = Docente;
     }
 
     public Integer getIdtut() {
@@ -38,28 +38,28 @@ public class Tutor {
     }
 
     public Anio getAnio() {
-        return anio;
+        return Anio;
     }
 
-    public void setAnio(Anio anio) {
-        this.anio = anio;
+    public void setAnio(Anio Anio) {
+        this.Anio = Anio;
     }
 
     public Seccion getSeccion() {
-        return seccion;
+        return Seccion;
     }
 
-    public void setSeccion(Seccion seccion) {
-        this.seccion = seccion;
+    public void setSeccion(Seccion Seccion) {
+        this.Seccion = Seccion;
     }
 
     public Docente getDocente() {
-        return docente;
+        return Docente;
     }
 
-    public void setDocente(Docente docente) {
-        this.docente = docente;
+    public void setDocente(Docente Docente) {
+        this.Docente = Docente;
     }
-    
+
     
 }

@@ -7,57 +7,57 @@ import java.sql.Date;
 public class Asistencia {
     
  
-private Integer idasist;
-private String condicion;
-private Date  fechasist;
-private Horario horario;
+private Integer Idasist;
+private String Condicion;
+private Date  Fechasist;
+private Horario Horario;
 private Alumno Alumno;
 
     public Asistencia() {
     }
 
-    public Asistencia(Integer idasist) {
-        this.idasist = idasist;
+    public Asistencia(Integer Idasist) {
+        this.Idasist = Idasist;
     }
 
-    public Asistencia(Integer idasist, String condicion, Date fechasist, Horario horario, Alumno Alumno) {
-        this.idasist = idasist;
-        this.condicion = condicion;
-        this.fechasist = fechasist;
-        this.horario = horario;
+    public Asistencia(Integer Idasist, String Condicion, Date Fechasist, Horario Horario, Alumno Alumno) {
+        this.Idasist = Idasist;
+        this.Condicion = Condicion;
+        this.Fechasist = Fechasist;
+        this.Horario = Horario;
         this.Alumno = Alumno;
     }
 
     public Integer getIdasist() {
-        return idasist;
+        return Idasist;
     }
 
-    public void setIdasist(Integer idasist) {
-        this.idasist = idasist;
+    public void setIdasist(Integer Idasist) {
+        this.Idasist = Idasist;
     }
 
     public String getCondicion() {
-        return condicion;
+        return Condicion;
     }
 
-    public void setCondicion(String condicion) {
-        this.condicion = condicion;
+    public void setCondicion(String Condicion) {
+        this.Condicion = Condicion;
     }
 
     public Date getFechasist() {
-        return fechasist;
+        return Fechasist;
     }
 
-    public void setFechasist(Date fechasist) {
-        this.fechasist = fechasist;
+    public void setFechasist(Date Fechasist) {
+        this.Fechasist = Fechasist;
     }
 
     public Horario getHorario() {
-        return horario;
+        return Horario;
     }
 
-    public void setHorario(Horario horario) {
-        this.horario = horario;
+    public void setHorario(Horario Horario) {
+        this.Horario = Horario;
     }
 
     public Alumno getAlumno() {
@@ -67,8 +67,6 @@ private Alumno Alumno;
     public void setAlumno(Alumno Alumno) {
         this.Alumno = Alumno;
     }
-
-   
 
     
 }

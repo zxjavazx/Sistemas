@@ -5,79 +5,77 @@ import java.sql.Date;
 
 
 public class Horario {
- 
-private Integer idhora;
-private String diasemana;
-private  Date horini;
-private  Date  horfin;
-private Anio anio;
-private Grado grado;
+    private Integer Idhora;
+    private String Diasemana;
+    private  Date Horini;
+    private  Date  Horfin;
+    private Anio Anio;
+    private Grado Grado;
 
     public Horario() {
     }
 
-    public Horario(Integer idhora) {
-        this.idhora = idhora;
+    public Horario(Integer Idhora) {
+        this.Idhora = Idhora;
     }
 
-    public Horario(Integer idhora, String diasemana, Date horini, Date horfin, Anio anio, Grado grado) {
-        this.idhora = idhora;
-        this.diasemana = diasemana;
-        this.horini = horini;
-        this.horfin = horfin;
-        this.anio = anio;
-        this.grado = grado;
+    public Horario(Integer Idhora, String Diasemana, Date Horini, Date Horfin, Anio Anio, Grado Grado) {
+        this.Idhora = Idhora;
+        this.Diasemana = Diasemana;
+        this.Horini = Horini;
+        this.Horfin = Horfin;
+        this.Anio = Anio;
+        this.Grado = Grado;
     }
 
     public Integer getIdhora() {
-        return idhora;
+        return Idhora;
     }
 
-    public void setIdhora(Integer idhora) {
-        this.idhora = idhora;
+    public void setIdhora(Integer Idhora) {
+        this.Idhora = Idhora;
     }
 
     public String getDiasemana() {
-        return diasemana;
+        return Diasemana;
     }
 
-    public void setDiasemana(String diasemana) {
-        this.diasemana = diasemana;
+    public void setDiasemana(String Diasemana) {
+        this.Diasemana = Diasemana;
     }
 
     public Date getHorini() {
-        return horini;
+        return Horini;
     }
 
-    public void setHorini(Date horini) {
-        this.horini = horini;
+    public void setHorini(Date Horini) {
+        this.Horini = Horini;
     }
 
     public Date getHorfin() {
-        return horfin;
+        return Horfin;
     }
 
-    public void setHorfin(Date horfin) {
-        this.horfin = horfin;
+    public void setHorfin(Date Horfin) {
+        this.Horfin = Horfin;
     }
 
     public Anio getAnio() {
-        return anio;
+        return Anio;
     }
 
-    public void setAnio(Anio anio) {
-        this.anio = anio;
+    public void setAnio(Anio Anio) {
+        this.Anio = Anio;
     }
 
     public Grado getGrado() {
-        return grado;
+        return Grado;
     }
 
-    public void setGrado(Grado grado) {
-        this.grado = grado;
+    public void setGrado(Grado Grado) {
+        this.Grado = Grado;
     }
 
-   
     
 }
 

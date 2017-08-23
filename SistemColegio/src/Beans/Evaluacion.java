@@ -5,69 +5,66 @@ import java.sql.Date;
 
 
 public class Evaluacion {
-    
-private  Integer ideval;
-private Date fecheval;
-private Integer nota;
-private Boleta boleta;
-private Alumno alumno;  
+    private  Integer Ideval;
+    private Date Fecheval;
+    private Integer Nota;
+    private Boleta Boleta;
+    private Alumno Alumno;  
 
     public Evaluacion() {
     }
 
-    public Evaluacion(Integer ideval) {
-        this.ideval = ideval;
+    public Evaluacion(Integer Ideval) {
+        this.Ideval = Ideval;
     }
 
-    public Evaluacion(Integer ideval, Date fecheval, Integer nota, Boleta boleta, Alumno alumno) {
-        this.ideval = ideval;
-        this.fecheval = fecheval;
-        this.nota = nota;
-        this.boleta = boleta;
-        this.alumno = alumno;
+    public Evaluacion(Integer Ideval, Date Fecheval, Integer Nota, Boleta Boleta, Alumno Alumno) {
+        this.Ideval = Ideval;
+        this.Fecheval = Fecheval;
+        this.Nota = Nota;
+        this.Boleta = Boleta;
+        this.Alumno = Alumno;
     }
 
     public Integer getIdeval() {
-        return ideval;
+        return Ideval;
     }
 
-    public void setIdeval(Integer ideval) {
-        this.ideval = ideval;
+    public void setIdeval(Integer Ideval) {
+        this.Ideval = Ideval;
     }
 
     public Date getFecheval() {
-        return fecheval;
+        return Fecheval;
     }
 
-    public void setFecheval(Date fecheval) {
-        this.fecheval = fecheval;
+    public void setFecheval(Date Fecheval) {
+        this.Fecheval = Fecheval;
     }
 
     public Integer getNota() {
-        return nota;
+        return Nota;
     }
 
-    public void setNota(Integer nota) {
-        this.nota = nota;
+    public void setNota(Integer Nota) {
+        this.Nota = Nota;
     }
 
     public Boleta getBoleta() {
-        return boleta;
+        return Boleta;
     }
 
-    public void setBoleta(Boleta boleta) {
-        this.boleta = boleta;
+    public void setBoleta(Boleta Boleta) {
+        this.Boleta = Boleta;
     }
 
     public Alumno getAlumno() {
-        return alumno;
+        return Alumno;
     }
 
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setAlumno(Alumno Alumno) {
+        this.Alumno = Alumno;
     }
 
-  
-    
     
 }

@@ -2,9 +2,9 @@ package Beans;
 public class Coordinador {
     private Integer Idcoor;
     private String Descoor;
-    private Area area;
-    private Anio anio;
-    private Docente docente;
+    private Area Area;
+    private Anio Anio;
+    private Docente Docente;
 
     public Coordinador() {
     }
@@ -13,12 +13,12 @@ public class Coordinador {
         this.Idcoor = Idcoor;
     }
 
-    public Coordinador(Integer Idcoor, String Descoor, Area area, Anio anio, Docente docente) {
+    public Coordinador(Integer Idcoor, String Descoor, Area Area, Anio Anio, Docente Docente) {
         this.Idcoor = Idcoor;
         this.Descoor = Descoor;
-        this.area = area;
-        this.anio = anio;
-        this.docente = docente;
+        this.Area = Area;
+        this.Anio = Anio;
+        this.Docente = Docente;
     }
 
     public Integer getIdcoor() {
@@ -38,28 +38,28 @@ public class Coordinador {
     }
 
     public Area getArea() {
-        return area;
+        return Area;
     }
 
-    public void setArea(Area area) {
-        this.area = area;
+    public void setArea(Area Area) {
+        this.Area = Area;
     }
 
     public Anio getAnio() {
-        return anio;
+        return Anio;
     }
 
-    public void setAnio(Anio anio) {
-        this.anio = anio;
+    public void setAnio(Anio Anio) {
+        this.Anio = Anio;
     }
 
     public Docente getDocente() {
-        return docente;
+        return Docente;
     }
 
-    public void setDocente(Docente docente) {
-        this.docente = docente;
+    public void setDocente(Docente Docente) {
+        this.Docente = Docente;
     }
-    
+
     
 }

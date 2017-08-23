@@ -1,9 +1,9 @@
 package Beans;
 public class Seccion {
     private Integer Idsecc;
-    private String nomsecc;
-    private Tutor tutor;
-    private Grado grado;
+    private String Nomsecc;
+    private Tutor Tutor;
+    private Grado Grado;
 
     public Seccion() {
     }
@@ -12,11 +12,11 @@ public class Seccion {
         this.Idsecc = Idsecc;
     }
 
-    public Seccion(Integer Idsecc, String nomsecc, Tutor tutor, Grado grado) {
+    public Seccion(Integer Idsecc, String Nomsecc, Tutor Tutor, Grado Grado) {
         this.Idsecc = Idsecc;
-        this.nomsecc = nomsecc;
-        this.tutor = tutor;
-        this.grado = grado;
+        this.Nomsecc = Nomsecc;
+        this.Tutor = Tutor;
+        this.Grado = Grado;
     }
 
     public Integer getIdsecc() {
@@ -28,28 +28,28 @@ public class Seccion {
     }
 
     public String getNomsecc() {
-        return nomsecc;
+        return Nomsecc;
     }
 
-    public void setNomsecc(String nomsecc) {
-        this.nomsecc = nomsecc;
+    public void setNomsecc(String Nomsecc) {
+        this.Nomsecc = Nomsecc;
     }
 
     public Tutor getTutor() {
-        return tutor;
+        return Tutor;
     }
 
-    public void setTutor(Tutor tutor) {
-        this.tutor = tutor;
+    public void setTutor(Tutor Tutor) {
+        this.Tutor = Tutor;
     }
 
     public Grado getGrado() {
-        return grado;
+        return Grado;
     }
 
-    public void setGrado(Grado grado) {
-        this.grado = grado;
+    public void setGrado(Grado Grado) {
+        this.Grado = Grado;
     }
-    
-    
+
+        
 }

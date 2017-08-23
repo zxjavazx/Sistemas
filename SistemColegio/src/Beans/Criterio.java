@@ -4,51 +4,46 @@ package Beans;
 
 
 public class Criterio {
-  
-    
-private Integer idcrit;
-private String nomcrit;
-private Area area;
+    private Integer Idcrit;
+    private String Nomcrit;
+    private Area Area;
 
     public Criterio() {
     }
 
-    public Criterio(Integer idcrit) {
-        this.idcrit = idcrit;
+    public Criterio(Integer Idcrit) {
+        this.Idcrit = Idcrit;
     }
 
-    public Criterio(Integer idcrit, String nomcrit, Area area) {
-        this.idcrit = idcrit;
-        this.nomcrit = nomcrit;
-        this.area = area;
+    public Criterio(Integer Idcrit, String Nomcrit, Area Area) {
+        this.Idcrit = Idcrit;
+        this.Nomcrit = Nomcrit;
+        this.Area = Area;
     }
 
     public Integer getIdcrit() {
-        return idcrit;
+        return Idcrit;
     }
 
-    public void setIdcrit(Integer idcrit) {
-        this.idcrit = idcrit;
+    public void setIdcrit(Integer Idcrit) {
+        this.Idcrit = Idcrit;
     }
 
     public String getNomcrit() {
-        return nomcrit;
+        return Nomcrit;
     }
 
-    public void setNomcrit(String nomcrit) {
-        this.nomcrit = nomcrit;
+    public void setNomcrit(String Nomcrit) {
+        this.Nomcrit = Nomcrit;
     }
 
     public Area getArea() {
-        return area;
+        return Area;
     }
 
-    public void setArea(Area area) {
-        this.area = area;
+    public void setArea(Area Area) {
+        this.Area = Area;
     }
-
-    
-
 
     
 }

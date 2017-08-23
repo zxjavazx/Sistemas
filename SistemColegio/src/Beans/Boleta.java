@@ -4,67 +4,67 @@ package Beans;
 
 public class Boleta {
     
- private Integer idbol;
- private Integer  pritri;
- private Integer  segtri;
- private Integer  tertri;
- private Anio  anio;
+ private Integer Idbol;
+ private Integer  Pritri;
+ private Integer  Segtri;
+ private Integer  Tertri;
+ private Anio  Anio;
  private Matricula matricula;
 
     public Boleta() {
     }
 
-    public Boleta(Integer idbol) {
-        this.idbol = idbol;
+    public Boleta(Integer Idbol) {
+        this.Idbol = Idbol;
     }
 
-    public Boleta(Integer idbol, Integer pritri, Integer segtri, Integer tertri, Anio anio, Matricula matricula) {
-        this.idbol = idbol;
-        this.pritri = pritri;
-        this.segtri = segtri;
-        this.tertri = tertri;
-        this.anio = anio;
+    public Boleta(Integer Idbol, Integer Pritri, Integer Segtri, Integer Tertri, Anio Anio, Matricula matricula) {
+        this.Idbol = Idbol;
+        this.Pritri = Pritri;
+        this.Segtri = Segtri;
+        this.Tertri = Tertri;
+        this.Anio = Anio;
         this.matricula = matricula;
     }
 
     public Integer getIdbol() {
-        return idbol;
+        return Idbol;
     }
 
-    public void setIdbol(Integer idbol) {
-        this.idbol = idbol;
+    public void setIdbol(Integer Idbol) {
+        this.Idbol = Idbol;
     }
 
     public Integer getPritri() {
-        return pritri;
+        return Pritri;
     }
 
-    public void setPritri(Integer pritri) {
-        this.pritri = pritri;
+    public void setPritri(Integer Pritri) {
+        this.Pritri = Pritri;
     }
 
     public Integer getSegtri() {
-        return segtri;
+        return Segtri;
     }
 
-    public void setSegtri(Integer segtri) {
-        this.segtri = segtri;
+    public void setSegtri(Integer Segtri) {
+        this.Segtri = Segtri;
     }
 
     public Integer getTertri() {
-        return tertri;
+        return Tertri;
     }
 
-    public void setTertri(Integer tertri) {
-        this.tertri = tertri;
+    public void setTertri(Integer Tertri) {
+        this.Tertri = Tertri;
     }
 
     public Anio getAnio() {
-        return anio;
+        return Anio;
     }
 
-    public void setAnio(Anio anio) {
-        this.anio = anio;
+    public void setAnio(Anio Anio) {
+        this.Anio = Anio;
     }
 
     public Matricula getMatricula() {
@@ -75,5 +75,4 @@ public class Boleta {
         this.matricula = matricula;
     }
 
-    
 }

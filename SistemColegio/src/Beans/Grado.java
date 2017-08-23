@@ -1,7 +1,7 @@
 package Beans;
 public class Grado {
     private Integer Idgrad;
-    private String nomgrad;
+    private String Nomgrad;
 
     public Grado() {
     }
@@ -10,9 +10,9 @@ public class Grado {
         this.Idgrad = Idgrad;
     }
 
-    public Grado(Integer Idgrad, String nomgrad) {
+    public Grado(Integer Idgrad, String Nomgrad) {
         this.Idgrad = Idgrad;
-        this.nomgrad = nomgrad;
+        this.Nomgrad = Nomgrad;
     }
 
     public Integer getIdgrad() {
@@ -24,12 +24,12 @@ public class Grado {
     }
 
     public String getNomgrad() {
-        return nomgrad;
+        return Nomgrad;
     }
 
-    public void setNomgrad(String nomgrad) {
-        this.nomgrad = nomgrad;
+    public void setNomgrad(String Nomgrad) {
+        this.Nomgrad = Nomgrad;
     }
-    
+
     
 }

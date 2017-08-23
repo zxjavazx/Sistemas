@@ -5,87 +5,86 @@ package Beans;
 
 public class Alumno {
     
- private  Integer idalum;
- private  String codalum;
- private  String nomalum;
- private String apepatalum;
- private String apematalum;
- private String sexo;
- private Matricula matricula;
+ private  Integer Idalum;
+ private  String Codalum;
+ private  String Nomalum;
+ private String Apepatalum;
+ private String Apematalum;
+ private String Sexo;
+ private Matricula Matricula;
 
     public Alumno() {
     }
 
-    public Alumno(Integer idalum) {
-        this.idalum = idalum;
+    public Alumno(Integer Idalum) {
+        this.Idalum = Idalum;
     }
 
-    public Alumno(Integer idalum, String codalum, String nomalum, String apepatalum, String apematalum, String sexo, Matricula matricula) {
-        this.idalum = idalum;
-        this.codalum = codalum;
-        this.nomalum = nomalum;
-        this.apepatalum = apepatalum;
-        this.apematalum = apematalum;
-        this.sexo = sexo;
-        this.matricula = matricula;
+    public Alumno(Integer Idalum, String Codalum, String Nomalum, String Apepatalum, String Apematalum, String Sexo, Matricula Matricula) {
+        this.Idalum = Idalum;
+        this.Codalum = Codalum;
+        this.Nomalum = Nomalum;
+        this.Apepatalum = Apepatalum;
+        this.Apematalum = Apematalum;
+        this.Sexo = Sexo;
+        this.Matricula = Matricula;
     }
 
     public Integer getIdalum() {
-        return idalum;
+        return Idalum;
     }
 
-    public void setIdalum(Integer idalum) {
-        this.idalum = idalum;
+    public void setIdalum(Integer Idalum) {
+        this.Idalum = Idalum;
     }
 
     public String getCodalum() {
-        return codalum;
+        return Codalum;
     }
 
-    public void setCodalum(String codalum) {
-        this.codalum = codalum;
+    public void setCodalum(String Codalum) {
+        this.Codalum = Codalum;
     }
 
     public String getNomalum() {
-        return nomalum;
+        return Nomalum;
     }
 
-    public void setNomalum(String nomalum) {
-        this.nomalum = nomalum;
+    public void setNomalum(String Nomalum) {
+        this.Nomalum = Nomalum;
     }
 
     public String getApepatalum() {
-        return apepatalum;
+        return Apepatalum;
     }
 
-    public void setApepatalum(String apepatalum) {
-        this.apepatalum = apepatalum;
+    public void setApepatalum(String Apepatalum) {
+        this.Apepatalum = Apepatalum;
     }
 
     public String getApematalum() {
-        return apematalum;
+        return Apematalum;
     }
 
-    public void setApematalum(String apematalum) {
-        this.apematalum = apematalum;
+    public void setApematalum(String Apematalum) {
+        this.Apematalum = Apematalum;
     }
 
     public String getSexo() {
-        return sexo;
+        return Sexo;
     }
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setSexo(String Sexo) {
+        this.Sexo = Sexo;
     }
 
     public Matricula getMatricula() {
-        return matricula;
+        return Matricula;
     }
 
-    public void setMatricula(Matricula matricula) {
-        this.matricula = matricula;
+    public void setMatricula(Matricula Matricula) {
+        this.Matricula = Matricula;
     }
 
     
-
 }

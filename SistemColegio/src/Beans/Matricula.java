@@ -6,79 +6,76 @@ import java.sql.Date;
 
 
 public class Matricula {
-
-
-private Integer idmatr;
-private Date fechmatr;
-private Anio anio;
-private Seccion seccion;
-private Boleta boleta;
-private Alumno alumno;
+    private Integer Idmatr;
+    private Date Fechmatr;
+    private Anio Anio;
+    private Seccion Seccion;
+    private Boleta Boleta;
+    private Alumno Alumno;
 
     public Matricula() {
     }
 
-    public Matricula(Integer idmatr) {
-        this.idmatr = idmatr;
+    public Matricula(Integer Idmatr) {
+        this.Idmatr = Idmatr;
     }
 
-    public Matricula(Integer idmatr, Date fechmatr, Anio anio, Seccion seccion, Boleta boleta, Alumno alumno) {
-        this.idmatr = idmatr;
-        this.fechmatr = fechmatr;
-        this.anio = anio;
-        this.seccion = seccion;
-        this.boleta = boleta;
-        this.alumno = alumno;
+    public Matricula(Integer Idmatr, Date Fechmatr, Anio Anio, Seccion Seccion, Boleta Boleta, Alumno Alumno) {
+        this.Idmatr = Idmatr;
+        this.Fechmatr = Fechmatr;
+        this.Anio = Anio;
+        this.Seccion = Seccion;
+        this.Boleta = Boleta;
+        this.Alumno = Alumno;
     }
 
     public Integer getIdmatr() {
-        return idmatr;
+        return Idmatr;
     }
 
-    public void setIdmatr(Integer idmatr) {
-        this.idmatr = idmatr;
+    public void setIdmatr(Integer Idmatr) {
+        this.Idmatr = Idmatr;
     }
 
     public Date getFechmatr() {
-        return fechmatr;
+        return Fechmatr;
     }
 
-    public void setFechmatr(Date fechmatr) {
-        this.fechmatr = fechmatr;
+    public void setFechmatr(Date Fechmatr) {
+        this.Fechmatr = Fechmatr;
     }
 
     public Anio getAnio() {
-        return anio;
+        return Anio;
     }
 
-    public void setAnio(Anio anio) {
-        this.anio = anio;
+    public void setAnio(Anio Anio) {
+        this.Anio = Anio;
     }
 
     public Seccion getSeccion() {
-        return seccion;
+        return Seccion;
     }
 
-    public void setSeccion(Seccion seccion) {
-        this.seccion = seccion;
+    public void setSeccion(Seccion Seccion) {
+        this.Seccion = Seccion;
     }
 
     public Boleta getBoleta() {
-        return boleta;
+        return Boleta;
     }
 
-    public void setBoleta(Boleta boleta) {
-        this.boleta = boleta;
+    public void setBoleta(Boleta Boleta) {
+        this.Boleta = Boleta;
     }
 
     public Alumno getAlumno() {
-        return alumno;
+        return Alumno;
     }
 
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setAlumno(Alumno Alumno) {
+        this.Alumno = Alumno;
     }
 
     
-
 }

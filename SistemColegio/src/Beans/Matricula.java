@@ -10,9 +10,7 @@ public class Matricula {
     private Date Fechmatr;
     private Anio Anio;
     private Seccion Seccion;
-    private Boleta Boleta;
-    private Alumno Alumno;
-
+    
     public Matricula() {
     }
 
@@ -20,13 +18,11 @@ public class Matricula {
         this.Idmatr = Idmatr;
     }
 
-    public Matricula(Integer Idmatr, Date Fechmatr, Anio Anio, Seccion Seccion, Boleta Boleta, Alumno Alumno) {
+    public Matricula(Integer Idmatr, Date Fechmatr, Anio Anio, Seccion Seccion) {
         this.Idmatr = Idmatr;
         this.Fechmatr = Fechmatr;
         this.Anio = Anio;
         this.Seccion = Seccion;
-        this.Boleta = Boleta;
-        this.Alumno = Alumno;
     }
 
     public Integer getIdmatr() {
@@ -59,22 +55,6 @@ public class Matricula {
 
     public void setSeccion(Seccion Seccion) {
         this.Seccion = Seccion;
-    }
-
-    public Boleta getBoleta() {
-        return Boleta;
-    }
-
-    public void setBoleta(Boleta Boleta) {
-        this.Boleta = Boleta;
-    }
-
-    public Alumno getAlumno() {
-        return Alumno;
-    }
-
-    public void setAlumno(Alumno Alumno) {
-        this.Alumno = Alumno;
     }
 
     

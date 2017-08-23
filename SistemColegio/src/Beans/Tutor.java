@@ -4,8 +4,7 @@ public class Tutor {
     private String Descripcion;
     private Anio Anio;
     private Seccion Seccion;
-    private Docente Docente;
-
+    
     public Tutor() {
     }
 
@@ -13,12 +12,11 @@ public class Tutor {
         this.Idtut = Idtut;
     }
 
-    public Tutor(Integer Idtut, String Descripcion, Anio Anio, Seccion Seccion, Docente Docente) {
+    public Tutor(Integer Idtut, String Descripcion, Anio Anio, Seccion Seccion) {
         this.Idtut = Idtut;
         this.Descripcion = Descripcion;
         this.Anio = Anio;
         this.Seccion = Seccion;
-        this.Docente = Docente;
     }
 
     public Integer getIdtut() {
@@ -53,13 +51,4 @@ public class Tutor {
         this.Seccion = Seccion;
     }
 
-    public Docente getDocente() {
-        return Docente;
-    }
-
-    public void setDocente(Docente Docente) {
-        this.Docente = Docente;
-    }
-
-    
 }

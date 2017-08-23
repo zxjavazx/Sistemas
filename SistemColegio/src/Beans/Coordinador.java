@@ -4,8 +4,7 @@ public class Coordinador {
     private String Descoor;
     private Area Area;
     private Anio Anio;
-    private Docente Docente;
-
+    
     public Coordinador() {
     }
 
@@ -13,12 +12,11 @@ public class Coordinador {
         this.Idcoor = Idcoor;
     }
 
-    public Coordinador(Integer Idcoor, String Descoor, Area Area, Anio Anio, Docente Docente) {
+    public Coordinador(Integer Idcoor, String Descoor, Area Area, Anio Anio) {
         this.Idcoor = Idcoor;
         this.Descoor = Descoor;
         this.Area = Area;
         this.Anio = Anio;
-        this.Docente = Docente;
     }
 
     public Integer getIdcoor() {
@@ -51,14 +49,6 @@ public class Coordinador {
 
     public void setAnio(Anio Anio) {
         this.Anio = Anio;
-    }
-
-    public Docente getDocente() {
-        return Docente;
-    }
-
-    public void setDocente(Docente Docente) {
-        this.Docente = Docente;
     }
 
     

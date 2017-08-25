@@ -1,19 +1,18 @@
 package Negocios;
 
-import Beans.Anio;
 import Beans.Area;
-import Beans.Coordinador;
+import Beans.Criterio;
 import Conexion.Conexion;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class nCoordinador {
+public class nCriterio {
     Conexion con = new Conexion();
     ResultSet rs;
     public Integer getId(){
         try {
-            String sql = "select nextval('coordinador_idcoor_seq') as idcoor;";
+            String sql = "select nextval('criterio_idcrit_seq') as idcrit;";
             
             Integer id = 0;
 
@@ -22,7 +21,7 @@ public class nCoordinador {
             rs.beforeFirst();
             
             if(rs.next()) {
-                id = rs.getInt("idcoor");
+                id = rs.getInt("idcrit");
                 if(rs.wasNull()) {
                     id = 0;
                 }
@@ -35,27 +34,25 @@ public class nCoordinador {
         }
     }
     
-    public List ListarCoordinador(){
+    public List ListarCriterio(){
         try {
-            List<Coordinador> lstcoordinadors = new ArrayList<Coordinador>();
+            List<Criterio> lstcriterios = new ArrayList<Criterio>();
             String sql = "select";
-            sql = sql + " idcoor";
-            sql = sql + ",descoor";
+            sql = sql + " idcrit";
+            sql = sql + ",nomcrit";
             sql = sql + ",idarea";
-            sql = sql + ",idanio";
-            sql = sql + " from coordinador";
+            sql = sql + " from criterio";
             sql = sql + ";";
             rs = con.RecuperarSQL(sql);
             
             while(rs.next()){
-                Coordinador obj = new Coordinador();
-                obj.setIdcoor(rs.getInt("idcoor"));
-                obj.setDescoor(rs.getString("descoor"));
+                Criterio obj = new Criterio();
+                obj.setIdcrit(rs.getInt("idcrit"));
+                obj.setNomcrit(rs.getString("nomcrit"));
                 obj.setArea(new Area(rs.getInt("idarea")));
-                obj.setAnio(new Anio(rs.getInt("idanio")));
-                lstcoordinadors.add(obj);
+                lstcriterios.add(obj);
             }
-            return lstcoordinadors;
+            return lstcriterios;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
@@ -63,20 +60,18 @@ public class nCoordinador {
         
     }
     
-    public void RegistrarCoordinador(Coordinador obj){
+    public void RegistrarCriterio(Criterio obj){
         try {
-            obj.setIdcoor(getId());
+            obj.setIdcrit(getId());
             
-            String sql = "insert into coordinador(";
-            sql = sql + " idcoor";
-            sql = sql + ",descoor";
+            String sql = "insert into criterio(";
+            sql = sql + " idcrit";
+            sql = sql + ",nomcrit";
             sql = sql + ",idarea";
-            sql = sql + ",idanio";
             sql = sql + ")values(";
-            sql = sql + "'"+obj.getIdcoor().toString()+"'";
-            sql = sql + ",'"+obj.getDescoor() + "'";
-            sql = sql + ",'"+obj.getArea().toString()+"'";
-            sql = sql + ",'"+obj.getAnio().toString()+"'";
+            sql = sql + "'"+obj.getIdcrit()+"'";
+            sql = sql + ",'"+obj.getNomcrit() + "'";
+            sql = sql + ",'"+obj.getArea().getIdarea() + "'";
             sql = sql + ");";
             
             rs = con.RecuperarSQL(sql);
@@ -86,15 +81,14 @@ public class nCoordinador {
         }
     }
     
-    public void ModificarCoordinador(Coordinador obj){
+    public void ModificarCriterio(Criterio obj){
         try {
             
-            String sql = "update coordinador set(";
-            sql = sql + " descoor = '"+obj.getDescoor() + "'";
-            sql = sql + ",idarea = '"+obj.getArea().getIdarea().toString() + "'";
-            sql = sql + ",idanio = '"+obj.getAnio().getIdanio().toString() + "'";
+            String sql = "update criterio set(";
+            sql = sql + " nomcrit = '"+obj.getNomcrit() + "'";
+            sql = sql + ",idarea = '"+obj.getArea().getIdarea() + "'";
             sql = sql + " where";
-            sql = sql + " idcoor = '"+obj.getIdcoor().toString()+"'";
+            sql = sql + " idcrit = '"+obj.getIdcrit()+"'";
             
             rs = con.RecuperarSQL(sql);
             
@@ -103,11 +97,11 @@ public class nCoordinador {
         }
     }
     
-    public void EliminarCoordinador(Coordinador obj){
+    public void EliminarCriterio(Criterio obj){
         try {
-            String sql = "delete from coordinador";
+            String sql = "delete from criterio";
             sql = sql + " where";
-            sql = sql + " idcoor = " + obj.getIdcoor().toString();
+            sql = sql + " idcrit = "+obj.getIdcrit().toString();
             sql = sql + ";";
             
             rs = con.RecuperarSQL(sql);

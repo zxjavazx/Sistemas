@@ -7,7 +7,7 @@ import java.sql.Date;
 
 public class Matricula {
     private Integer Idmatr;
-    private Date Fechmatr;
+    private String Fechmatr;
     private Anio Anio;
     private Seccion Seccion;
     
@@ -18,7 +18,7 @@ public class Matricula {
         this.Idmatr = Idmatr;
     }
 
-    public Matricula(Integer Idmatr, Date Fechmatr, Anio Anio, Seccion Seccion) {
+    public Matricula(Integer Idmatr, String Fechmatr, Anio Anio, Seccion Seccion) {
         this.Idmatr = Idmatr;
         this.Fechmatr = Fechmatr;
         this.Anio = Anio;
@@ -33,11 +33,11 @@ public class Matricula {
         this.Idmatr = Idmatr;
     }
 
-    public Date getFechmatr() {
+    public String getFechmatr() {
         return Fechmatr;
     }
 
-    public void setFechmatr(Date Fechmatr) {
+    public void setFechmatr(String Fechmatr) {
         this.Fechmatr = Fechmatr;
     }
 

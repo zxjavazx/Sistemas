@@ -9,7 +9,7 @@ public class Asistencia {
  
 private Integer Idasist;
 private String Condicion;
-private Date  Fechasist;
+private String  Fechasist;
 private Horario Horario;
 private Alumno Alumno;
 
@@ -20,7 +20,7 @@ private Alumno Alumno;
         this.Idasist = Idasist;
     }
 
-    public Asistencia(Integer Idasist, String Condicion, Date Fechasist, Horario Horario, Alumno Alumno) {
+    public Asistencia(Integer Idasist, String Condicion, String Fechasist, Horario Horario, Alumno Alumno) {
         this.Idasist = Idasist;
         this.Condicion = Condicion;
         this.Fechasist = Fechasist;
@@ -44,11 +44,11 @@ private Alumno Alumno;
         this.Condicion = Condicion;
     }
 
-    public Date getFechasist() {
+    public String getFechasist() {
         return Fechasist;
     }
 
-    public void setFechasist(Date Fechasist) {
+    public void setFechasist(String Fechasist) {
         this.Fechasist = Fechasist;
     }
 

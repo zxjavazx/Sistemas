@@ -1,7 +1,6 @@
 package Negocios;
 
 import Beans.Coordinador;
-import Beans.Grado;
 import Beans.Docente;
 import Beans.Especialidad;
 import Beans.Tutor;
@@ -87,7 +86,7 @@ public class nDocente {
             sql = sql + ",idcoor";
             sql = sql + ",idesp";
             sql = sql + ")values(";
-            sql = sql + "'"+obj.getIddoc().toString()+"'";
+            sql = sql + " '"+obj.getIddoc().toString()+"'";
             sql = sql + ",'"+obj.getCoddoc() + "'";
             sql = sql + ",'"+obj.getNomdoc()+"'";
             sql = sql + ",'"+obj.getApepatdoc()+"'";
@@ -109,12 +108,12 @@ public class nDocente {
             
             String sql = "update docente set(";
             sql = sql + " coddoc = '"+obj.getCoddoc() + "'";
-            sql = sql + " nomdoc = '"+obj.getNomdoc() + "'";
-            sql = sql + " apepatdoc = '"+obj.getApepatdoc() + "'";
-            sql = sql + " apematdoc = '"+obj.getApematdoc() + "'";
-            sql = sql + " idtut = '"+obj.getIdtut().toString() + "'";
-            sql = sql + " idcoor = '"+obj.getIdcoor().toString() + "'";
-            sql = sql + " idtut = '"+obj.getIdesp().toString() + "'";
+            sql = sql + ",nomdoc = '"+obj.getNomdoc() + "'";
+            sql = sql + ",apepatdoc = '"+obj.getApepatdoc() + "'";
+            sql = sql + ",apematdoc = '"+obj.getApematdoc() + "'";
+            sql = sql + ",idtut = '"+obj.getIdtut().toString() + "'";
+            sql = sql + ",idcoor = '"+obj.getIdcoor().toString() + "'";
+            sql = sql + ",idtut = '"+obj.getIdesp().toString() + "'";
             sql = sql + " where";
             sql = sql + " iddoc = '"+obj.getIddoc().toString()+"'";
             

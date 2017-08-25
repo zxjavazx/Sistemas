@@ -2,7 +2,6 @@ package Negocios;
 
 import Beans.Anio;
 import Beans.Tutor;
-import Beans.Matricula;
 import Beans.Seccion;
 import Conexion.Conexion;
 import java.sql.ResultSet;

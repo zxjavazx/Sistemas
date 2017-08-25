@@ -6,7 +6,7 @@ import java.sql.Date;
 
 public class Evaluacion {
     private  Integer Ideval;
-    private Date Fecheval;
+    private String Fecheval;
     private Integer Nota;
     private Boleta Boleta;
     private Alumno Alumno;  
@@ -18,7 +18,7 @@ public class Evaluacion {
         this.Ideval = Ideval;
     }
 
-    public Evaluacion(Integer Ideval, Date Fecheval, Integer Nota, Boleta Boleta, Alumno Alumno) {
+    public Evaluacion(Integer Ideval, String Fecheval, Integer Nota, Boleta Boleta, Alumno Alumno) {
         this.Ideval = Ideval;
         this.Fecheval = Fecheval;
         this.Nota = Nota;
@@ -34,11 +34,11 @@ public class Evaluacion {
         this.Ideval = Ideval;
     }
 
-    public Date getFecheval() {
+    public String getFecheval() {
         return Fecheval;
     }
 
-    public void setFecheval(Date Fecheval) {
+    public void setFecheval(String Fecheval) {
         this.Fecheval = Fecheval;
     }
 

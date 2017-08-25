@@ -82,7 +82,6 @@ public class nAnio {
     
     public void ModificarAnio(Anio obj){
         try {
-            obj.setIdanio(getId());
             
             String sql = "update año set(";
             sql = sql + ",fechin = '"+obj.getFechin() + "'";

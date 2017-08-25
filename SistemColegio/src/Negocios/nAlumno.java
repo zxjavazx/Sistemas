@@ -181,4 +181,63 @@ public class nAlumno {
         }
     }    
     
+    public void RegistrarAlumno(Alumno obj){
+        try {
+            obj.setIdalum(getId());
+            
+            String sql = "insert into alumno(";
+            sql = sql + " idalum";
+            sql = sql + ",codalum";
+            sql = sql + ",nomalum";
+            sql = sql + ",apepatalum";
+            sql = sql + ",apematalum";
+            sql = sql + ",sexo";
+            sql = sql + ",idmatr";
+            sql = sql + ")values(";
+            sql = sql + "'"+obj.getIdalum()+"'";
+            sql = sql + ",'"+obj.getCodalum()+"'";
+            sql = sql + ",'"+obj.getNomalum()+"'";
+            sql = sql + ",'"+obj.getApepatalum()+"'";
+            sql = sql + ",'"+obj.getApematalum()+"'";
+            sql = sql + ",'"+obj.getSexo()+"'";
+            sql = sql + ",'"+obj.getMatricula()+"'";
+            sql = sql + ");";
+            
+            rs = con.RecuperarSQL(sql);
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void ModificarAlumno(Alumno obj){
+        try {
+            String sql = "update alumno set(";
+            sql = sql + " codalum = '"+obj.getCodalum()+"'";
+            sql = sql + ",nomalum = '"+obj.getNomalum()+"'";
+            sql = sql + ",apepatalum = '"+obj.getApepatalum()+"'";
+            sql = sql + ",apematalum = '"+obj.getApematalum()+"'";
+            sql = sql + ",sexo = '"+obj.getSexo()+"'";
+            sql = sql + ",idmat = '"+obj.getMatricula().getIdmatr()+"'";
+            sql = sql + " where";
+            sql = sql + " idalum = '"+obj.getIdalum()+"'";
+            
+            rs = con.RecuperarSQL(sql);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void EliminarArea(Alumno obj){
+        try {
+            String sql = "delete from alumno";
+            sql = sql + " where";
+            sql = sql + " idalum = "+obj.getIdalum().toString();
+            
+            rs = con.RecuperarSQL(sql);
+                    
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

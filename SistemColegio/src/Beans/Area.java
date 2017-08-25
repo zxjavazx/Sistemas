@@ -2,8 +2,7 @@ package Beans;
 public class Area {
     private Integer Idarea;
     private String Nomarea;
-    private Coordinador Coordinador;
-
+    
     public Area() {
     }
 
@@ -11,10 +10,9 @@ public class Area {
         this.Idarea = Idarea;
     }
 
-    public Area(Integer Idarea, String Nomarea, Coordinador Coordinador) {
+    public Area(Integer Idarea, String Nomarea) {
         this.Idarea = Idarea;
         this.Nomarea = Nomarea;
-        this.Coordinador = Coordinador;
     }
 
     public Integer getIdarea() {
@@ -33,13 +31,5 @@ public class Area {
         this.Nomarea = Nomarea;
     }
 
-    public Coordinador getCoordinador() {
-        return Coordinador;
-    }
 
-    public void setCoordinador(Coordinador Coordinador) {
-        this.Coordinador = Coordinador;
-    }
-
-    
 }

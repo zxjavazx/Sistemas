@@ -1,20 +1,17 @@
-package Negocios;
+package AccesoDatos;
 
 import Beans.Anio;
-import Beans.Area;
 import Beans.Grado;
 import Beans.Horario;
-import Beans.Horario;
-import Beans.Seccion;
 import Conexion.Conexion;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class nHorario {
+public class adHorario {
     Conexion con = new Conexion();
     ResultSet rs;
-    public Integer getId(){
+    public Integer getId() throws Exception{
         try {
             String sql = "select nextval('horario_idhora_seq') as idhora;";
             
@@ -33,22 +30,56 @@ public class nHorario {
             return id;
         }
         catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
     }
     
-    public List ListarHorario(){
+    public Integer proxId() throws Exception{
+        try {
+            String sql = "select last_value from horario_idhora_seq;";
+            
+            Integer id = 0;
+            
+            rs = con.RecuperarSQL(sql);
+            
+            rs.beforeFirst();
+            
+            if(rs.next()){
+                id = rs.getInt("last_value");
+                
+                if(rs.wasNull()){
+                    id = 0;
+                }
+                
+                if(id==1){
+                    id = 0;
+                }
+            }
+            id = id+1;
+            
+            return id;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    
+    public List ListarHorario() throws Exception{
         try {
             List<Horario> lsthorarios = new ArrayList<Horario>();
             String sql = "select";
-            sql = sql + " idhora";
-            sql = sql + ",diasemana";
-            sql = sql + ",horini";
-            sql = sql + ",horfin";
-            sql = sql + ",idanio";
-            sql = sql + ",idgrad";
+            sql = sql + " horario.idhora";
+            sql = sql + ",horario.diasemana";
+            sql = sql + ",horario.horini";
+            sql = sql + ",horario.horfin";
+            sql = sql + ",año.idanio";
+            sql = sql + ",año.anio";
+            sql = sql + ",año.fechin";
+            sql = sql + ",año.fechfin";
+            sql = sql + ",grado.idgrad";
+            sql = sql + ",grado.nomgrad";
             sql = sql + " from horario";
+            sql = sql + " inner join año on horario.idañio = año.idanio";
+            sql = sql + " inner join grado on horario.idgrad = grado.idgrad";
             sql = sql + ";";
             rs = con.RecuperarSQL(sql);
             
@@ -58,19 +89,18 @@ public class nHorario {
                 obj.setDiasemana(rs.getString("diasemana"));
                 obj.setHorini(rs.getDate("horini"));
                 obj.setHorfin(rs.getDate("horfin"));
-                obj.setAnio(new Anio(rs.getInt("idanio")));
-                obj.setGrado(new Grado(rs.getInt("idgrad")));
+                obj.setAnio(new Anio(rs.getInt("idanio"),(rs.getString("anio")),rs.getString("fechin"),rs.getString("fechfin")));
+                obj.setGrado(new Grado(rs.getInt("idgrad"),rs.getString("nomgrad")));
                 lsthorarios.add(obj);
             }
             return lsthorarios;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
         
     }
     
-    public void RegistrarHorario(Horario obj){
+    public void RegistrarHorario(Horario obj) throws Exception{
         try {
             obj.setIdhora(getId());
             
@@ -93,7 +123,7 @@ public class nHorario {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -112,7 +142,7 @@ public class nHorario {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -126,7 +156,7 @@ public class nHorario {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
 }

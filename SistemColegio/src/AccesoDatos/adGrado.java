@@ -1,4 +1,4 @@
-package Negocios;
+package AccesoDatos;
 
 import Beans.Grado;
 import Conexion.Conexion;
@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class nGrado {
+public class adGrado {
     Conexion con = new Conexion();
     ResultSet rs;
-    public Integer getId(){
+    public Integer getId() throws Exception{
         try {
             String sql = "select nextval('grado_idgrad_seq') as idgrad;";
             
@@ -28,12 +28,40 @@ public class nGrado {
             return id;
         }
         catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
     }
     
-    public List ListarGrado(){
+    public Integer proxId() throws Exception{
+        try {
+            String sql = "select last_value from grado_idgrad_seq;";
+            
+            Integer id = 0;
+            
+            rs = con.RecuperarSQL(sql);
+            
+            rs.beforeFirst();
+            
+            if(rs.next()){
+                id = rs.getInt("last_value");
+                
+                if(rs.wasNull()){
+                    id = 0;
+                }
+                
+                if(id==1){
+                    id = 0;
+                }
+            }
+            id = id+1;
+            
+            return id;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    
+    public List ListarGrado() throws Exception{
         try {
             List<Grado> lstgrados = new ArrayList<Grado>();
             String sql = "select";
@@ -51,13 +79,12 @@ public class nGrado {
             }
             return lstgrados;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
         
     }
     
-    public void RegistrarGrado(Grado obj){
+    public void RegistrarGrado(Grado obj) throws Exception{
         try {
             obj.setIdgrad(getId());
             
@@ -72,7 +99,7 @@ public class nGrado {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -87,7 +114,7 @@ public class nGrado {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -101,7 +128,7 @@ public class nGrado {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
 }

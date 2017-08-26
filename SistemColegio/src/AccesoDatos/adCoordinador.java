@@ -1,4 +1,4 @@
-package Negocios;
+package AccesoDatos;
 
 import Beans.Anio;
 import Beans.Area;
@@ -8,10 +8,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class nCoordinador {
+public class adCoordinador {
     Conexion con = new Conexion();
     ResultSet rs;
-    public Integer getId(){
+    public Integer getId() throws Exception{
         try {
             String sql = "select nextval('coordinador_idcoor_seq') as idcoor;";
             
@@ -30,19 +30,50 @@ public class nCoordinador {
             return id;
         }
         catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
     }
     
-    public List ListarCoordinador(){
+    public Integer proxId() throws Exception{
+        try {
+            String sql = "select last_value from coordinador_idcoor_seq;";
+            
+            Integer id = 0;
+            
+            rs = con.RecuperarSQL(sql);
+            
+            rs.beforeFirst();
+            
+            if(rs.next()){
+                id = rs.getInt("last_value");
+                
+                if(rs.wasNull()){
+                    id = 0;
+                }
+                
+                if(id==1){
+                    id = 0;
+                }
+            }
+            id = id+1;
+            
+            return id;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    
+    public List ListarCoordinador() throws Exception{
         try {
             List<Coordinador> lstcoordinadors = new ArrayList<Coordinador>();
             String sql = "select";
-            sql = sql + " idcoor";
-            sql = sql + ",descoor";
-            sql = sql + ",idarea";
-            sql = sql + ",idanio";
+            sql = sql + " coordinador.idcoor";
+            sql = sql + ",coordinadore.descoor";
+            sql = sql + ",area.idarea";
+            sql = sql + ",area.nomarea";
+            sql = sql + ",año.idanio";
+            sql = sql + ",año.fechin";
+            sql = sql + ",año.fechfin";
             sql = sql + " from coordinador";
             sql = sql + ";";
             rs = con.RecuperarSQL(sql);
@@ -51,19 +82,18 @@ public class nCoordinador {
                 Coordinador obj = new Coordinador();
                 obj.setIdcoor(rs.getInt("idcoor"));
                 obj.setDescoor(rs.getString("descoor"));
-                obj.setArea(new Area(rs.getInt("idarea")));
-                obj.setAnio(new Anio(rs.getInt("idanio")));
+                obj.setArea(new Area(rs.getInt("idarea"),rs.getString("nomarea")));
+                obj.setAnio(new Anio(rs.getInt("idanio"),(rs.getString("anio")),rs.getString("fechin"),rs.getString("fechfin")));
                 lstcoordinadors.add(obj);
             }
             return lstcoordinadors;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
         
     }
     
-    public void RegistrarCoordinador(Coordinador obj){
+    public void RegistrarCoordinador(Coordinador obj) throws Exception{
         try {
             obj.setIdcoor(getId());
             
@@ -82,7 +112,7 @@ public class nCoordinador {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -99,7 +129,7 @@ public class nCoordinador {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -113,7 +143,7 @@ public class nCoordinador {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
 }

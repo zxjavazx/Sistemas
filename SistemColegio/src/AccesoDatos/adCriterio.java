@@ -1,4 +1,4 @@
-package Negocios;
+package AccesoDatos;
 
 import Beans.Area;
 import Beans.Criterio;
@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class nCriterio {
+public class adCriterio {
     Conexion con = new Conexion();
     ResultSet rs;
-    public Integer getId(){
+    public Integer getId() throws Exception{
         try {
             String sql = "select nextval('criterio_idcrit_seq') as idcrit;";
             
@@ -29,18 +29,47 @@ public class nCriterio {
             return id;
         }
         catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
     }
     
-    public List ListarCriterio(){
+    public Integer proxId() throws Exception{
+        try {
+            String sql = "select last_value from criterio_idcrit_seq;";
+            
+            Integer id = 0;
+            
+            rs = con.RecuperarSQL(sql);
+            
+            rs.beforeFirst();
+            
+            if(rs.next()){
+                id = rs.getInt("last_value");
+                
+                if(rs.wasNull()){
+                    id = 0;
+                }
+                
+                if(id==1){
+                    id = 0;
+                }
+            }
+            id = id+1;
+            
+            return id;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    
+    public List ListarCriterio() throws Exception{
         try {
             List<Criterio> lstcriterios = new ArrayList<Criterio>();
             String sql = "select";
-            sql = sql + " idcrit";
-            sql = sql + ",nomcrit";
-            sql = sql + ",idarea";
+            sql = sql + " criterio.idcrit";
+            sql = sql + ",criterio.nomcrit";
+            sql = sql + ",area.idarea";
+            sql = sql + ",area.nomarea";
             sql = sql + " from criterio";
             sql = sql + ";";
             rs = con.RecuperarSQL(sql);
@@ -49,18 +78,17 @@ public class nCriterio {
                 Criterio obj = new Criterio();
                 obj.setIdcrit(rs.getInt("idcrit"));
                 obj.setNomcrit(rs.getString("nomcrit"));
-                obj.setArea(new Area(rs.getInt("idarea")));
+                obj.setArea(new Area(rs.getInt("idarea"),rs.getString("nomarea")));
                 lstcriterios.add(obj);
             }
             return lstcriterios;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
         
     }
     
-    public void RegistrarCriterio(Criterio obj){
+    public void RegistrarCriterio(Criterio obj) throws Exception{
         try {
             obj.setIdcrit(getId());
             
@@ -77,7 +105,7 @@ public class nCriterio {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -93,7 +121,7 @@ public class nCriterio {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -107,7 +135,7 @@ public class nCriterio {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
 }

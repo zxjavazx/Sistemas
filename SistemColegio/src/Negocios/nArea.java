@@ -1,107 +1,73 @@
 package Negocios;
 
+import AccesoDatos.adArea;
 import Beans.Area;
 import Conexion.Conexion;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
 public class nArea {
-    Conexion con = new Conexion();
-    ResultSet rs;
-    public Integer getId(){
+    public String ObtenerIdArea() throws Exception{
+        Conexion con = null;
+        String id;
         try {
-            String sql = "select nextval('area_idarea_seq') as idarea;";
+            con = new Conexion();
             
-            Integer id = 0;
-
-            rs = con.RecuperarSQL(sql);
-
-            rs.beforeFirst();
+            adArea adarea = new adArea();
+            id = Integer.toString(adarea.proxId());
             
-            if(rs.next()) {
-                id = rs.getInt("idarea");
-                if(rs.wasNull()) {
-                    id = 0;
-                }
-            }
             return id;
-        }
-        catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+        } catch (Exception e) {
+            throw e;
         }
     }
     
-    public List ListarArea(){
+    public List<Area> ConsultarArea() throws Exception{
+        Conexion con = null;
         try {
-            List<Area> lstareas = new ArrayList<Area>();
-            String sql = "select";
-            sql = sql + " idarea";
-            sql = sql + ",nomarea";
-            sql = sql + " from area";
-            sql = sql + ";";
-            rs = con.RecuperarSQL(sql);
+            con = new Conexion();
             
-            while(rs.next()){
-                Area obj = new Area();
-                obj.setIdarea(rs.getInt("idarea"));
-                obj.setNomarea(rs.getString("nomarea"));
-                lstareas.add(obj);
-            }
+            adArea adarea = new adArea();
+            List<Area> lstareas = adarea.ListarArea();
             return lstareas;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-        
-    }
-    
-    public void RegistrarArea(Area obj){
-        try {
-            obj.setIdarea(getId());
-            
-            String sql = "insert into area(";
-            sql = sql + " idarea";
-            sql = sql + ",nomarea";
-            sql = sql + ")values(";
-            sql = sql + "'"+obj.getIdarea()+"'";
-            sql = sql + ",'"+obj.getNomarea() + "'";
-            sql = sql + ");";
-            
-            rs = con.RecuperarSQL(sql);
-            
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
-    public void ModificarArea(Area obj){
+    public void RegistrarArea(Area area) throws Exception{
+        Conexion con = null;
         try {
+            con = new Conexion();
             
-            String sql = "update area set(";
-            sql = sql + " nomarea = '"+obj.getNomarea() + "'";
-            sql = sql + " where";
-            sql = sql + " idarea = '"+obj.getIdarea()+"'";
-            
-            rs = con.RecuperarSQL(sql);
-            
+            adArea adarea = new adArea();
+            adarea.RegistrarArea(area);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
-    public void EliminarArea(Area obj){
+    public void ActualizarArea(Area area) throws Exception{
+        Conexion con = null;
         try {
-            String sql = "delete from area";
-            sql = sql + " where";
-            sql = sql + " idarea = " + obj.getIdarea().toString();
-            sql = sql + ";";
+            con = new Conexion();
             
-            rs = con.RecuperarSQL(sql);
-            
+            adArea adarea = new adArea();
+            adarea.ModificarArea(area);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
+        }
+    }
+    
+    public void EliminarArea(Area area) throws Exception{
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            
+            adArea adarea = new adArea();
+            adarea.EliminarArea(area);
+                    
+        } catch (Exception e) {
+            throw e;
         }
     }
 }

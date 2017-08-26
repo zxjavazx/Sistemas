@@ -1,16 +1,15 @@
-package Negocios;
+package AccesoDatos;
 
-import Beans.Grado;
 import Beans.Especialidad;
 import Conexion.Conexion;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class nEspecialidad {
+public class adEspecialidad {
     Conexion con = new Conexion();
     ResultSet rs;
-    public Integer getId(){
+    public Integer getId() throws Exception{
         try {
             String sql = "select nextval('especialidad_idesp_seq') as idesp;";
             
@@ -29,12 +28,40 @@ public class nEspecialidad {
             return id;
         }
         catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
     }
     
-    public List ListarEspecialidad(){
+    public Integer proxId() throws Exception{
+        try {
+            String sql = "select last_value from especialidad_idesp_seq;";
+            
+            Integer id = 0;
+            
+            rs = con.RecuperarSQL(sql);
+            
+            rs.beforeFirst();
+            
+            if(rs.next()){
+                id = rs.getInt("last_value");
+                
+                if(rs.wasNull()){
+                    id = 0;
+                }
+                
+                if(id==1){
+                    id = 0;
+                }
+            }
+            id = id+1;
+            
+            return id;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    
+    public List ListarEspecialidad() throws Exception{
         try {
             List<Especialidad> lstespecialidads = new ArrayList<Especialidad>();
             String sql = "select";
@@ -54,13 +81,12 @@ public class nEspecialidad {
             }
             return lstespecialidads;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
         
     }
     
-    public void RegistrarEspecialidad(Especialidad obj){
+    public void RegistrarEspecialidad(Especialidad obj) throws Exception{
         try {
             obj.setIdesp(getId());
             
@@ -77,7 +103,7 @@ public class nEspecialidad {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -93,7 +119,7 @@ public class nEspecialidad {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -107,7 +133,7 @@ public class nEspecialidad {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
 }

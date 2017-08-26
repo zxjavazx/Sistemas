@@ -1,98 +1,61 @@
 package Negocios;
 
+import AccesoDatos.adAnio;
 import Beans.Anio;
 import Conexion.Conexion;
-import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
 public class nAnio {
-    Conexion con = new Conexion();
-    ResultSet rs;
-    public Integer getId(){
+    public String ObtenerIdAnio() throws Exception{
+        Conexion con = null;
+        String id;
         try {
-            String sql = "select nextval('año_idanio_seq') as idanio;";
+            con = new Conexion();
             
-            Integer id = 0;
-
-            rs = con.RecuperarSQL(sql);
-
-            rs.beforeFirst();
+            adAnio adanio = new adAnio();
+            id = Integer.toString(adanio.proxId());
             
-            if(rs.next()) {
-                id = rs.getInt("idanio");
-                if(rs.wasNull()) {
-                    id = 0;
-                }
-            }
             return id;
-        }
-        catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+        } catch (Exception e) {
+            throw e;
         }
     }
     
-    public List ListarAnio(){
+    public List<Anio> ConsultarAnio() throws Exception{
+        Conexion con = null;
         try {
-            List<Anio> lstalumnos = new ArrayList<Anio>();
-            String sql = "select";
-            sql = sql + " idanio";
-            sql = sql + ",fechin";
-            sql = sql + ",fechfin";
-            sql = sql + " from anio";
-            sql = sql + ";";
-            rs = con.RecuperarSQL(sql);
+            con = new Conexion();
             
-            while(rs.next()){
-                Anio obj = new Anio();
-                obj.setIdanio(rs.getInt("idanio"));
-                obj.setFechin(rs.getString("fechin"));
-                obj.setFechfin(rs.getString("fechfin"));
-                lstalumnos.add(obj);
-            }
-            return lstalumnos;
+            adAnio adanio = new adAnio();
+            List<Anio> lstanios = adanio.ListarAnio();
+            
+            return lstanios;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
-        
-    }
-    
-    public void RegistrarAnio(Anio obj){
-        try {
-            obj.setIdanio(getId());
-            
-            String sql = "insert into año(";
-            sql = sql + " idanio";
-            sql = sql + ",fechin";
-            sql = sql + ",fechfin";
-            sql = sql + ")values(";
-            sql = sql + "'"+obj.getIdanio()+"'";
-            sql = sql + ",'"+obj.getFechin() + "'";
-            sql = sql + ",'"+obj.getFechfin() + "'";
-            sql = sql + ");";
-            
-            rs = con.RecuperarSQL(sql);
-            
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
-    public void ModificarAnio(Anio obj){
+    public void RegistrarAnio(Anio anio) throws Exception{
+        Conexion con = null;
         try {
+            con = new Conexion();
             
-            String sql = "update año set(";
-            sql = sql + ",fechin = '"+obj.getFechin() + "'";
-            sql = sql + ",fechfin = '"+obj.getFechfin() + "'";
-            sql = sql + " where";
-            sql = sql + " idanio = '"+obj.getIdanio()+"'";
-            
-            rs = con.RecuperarSQL(sql);
-            
+            adAnio adanio = new adAnio();
+            adanio.RegistrarAnio(anio);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
+        }
+    }
+    
+    public void ActualizarAnio(Anio anio) throws Exception{
+        Conexion con = null;
+        try {
+            con = new Conexion();
+            
+            adAnio adanio = new adAnio();
+            adanio.ModificarAnio(anio);
+        } catch (Exception e) {
+            throw e;
         }
     }
 }

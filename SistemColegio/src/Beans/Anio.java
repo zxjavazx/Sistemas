@@ -2,6 +2,7 @@ package Beans;
 
 public class Anio {
     private Integer Idanio;
+    private String Anio;
     private String Fechin;
     private String Fechfin;
 
@@ -12,8 +13,9 @@ public class Anio {
         this.Idanio = Idanio;
     }
 
-    public Anio(Integer Idanio, String Fechin, String Fechfin) {
+    public Anio(Integer Idanio, String Anio, String Fechin, String Fechfin) {
         this.Idanio = Idanio;
+        this.Anio = Anio;
         this.Fechin = Fechin;
         this.Fechfin = Fechfin;
     }
@@ -24,6 +26,14 @@ public class Anio {
 
     public void setIdanio(Integer Idanio) {
         this.Idanio = Idanio;
+    }
+
+    public String getAnio() {
+        return Anio;
+    }
+
+    public void setAnio(String Anio) {
+        this.Anio = Anio;
     }
 
     public String getFechin() {

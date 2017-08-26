@@ -1,4 +1,4 @@
-package Negocios;
+package AccesoDatos;
 
 import Beans.Grado;
 import Beans.Seccion;
@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class nSeccion {
+public class adSeccion {
     Conexion con = new Conexion();
     ResultSet rs;
-    public Integer getId(){
+    public Integer getId() throws Exception{
         try {
             String sql = "select nextval('seccion_idsecc_seq') as idsecc;";
             
@@ -29,18 +29,47 @@ public class nSeccion {
             return id;
         }
         catch(Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
     }
     
-    public List ListarSeccion(){
+    public Integer proxId() throws Exception{
+        try {
+            String sql = "select last_value from seccion_idsecc_seq;";
+            
+            Integer id = 0;
+            
+            rs = con.RecuperarSQL(sql);
+            
+            rs.beforeFirst();
+            
+            if(rs.next()){
+                id = rs.getInt("last_value");
+                
+                if(rs.wasNull()){
+                    id = 0;
+                }
+                
+                if(id==1){
+                    id = 0;
+                }
+            }
+            id = id+1;
+            
+            return id;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    
+    public List ListarSeccion() throws Exception{
         try {
             List<Seccion> lstseccions = new ArrayList<Seccion>();
             String sql = "select";
-            sql = sql + " idsecc";
-            sql = sql + ",nomsecc";
-            sql = sql + ",idgrad";
+            sql = sql + " seccion.idsecc";
+            sql = sql + ",seccion.nomsecc";
+            sql = sql + ",grado.idgrad";
+            sql = sql + ",grado.nomgrad";
             sql = sql + " from seccion";
             sql = sql + ";";
             rs = con.RecuperarSQL(sql);
@@ -49,18 +78,17 @@ public class nSeccion {
                 Seccion obj = new Seccion();
                 obj.setIdsecc(rs.getInt("idsecc"));
                 obj.setNomsecc(rs.getString("nomsecc"));
-                obj.setGrado(new Grado(rs.getInt("idgrad")));
+                obj.setGrado(new Grado(rs.getInt("idgrad"),rs.getString("nomgrad")));
                 lstseccions.add(obj);
             }
             return lstseccions;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return null;
+            throw e;
         }
         
     }
     
-    public void RegistrarSeccion(Seccion obj){
+    public void RegistrarSeccion(Seccion obj) throws Exception{
         try {
             obj.setIdsecc(getId());
             
@@ -77,7 +105,7 @@ public class nSeccion {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -93,7 +121,7 @@ public class nSeccion {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
     
@@ -107,7 +135,7 @@ public class nSeccion {
             rs = con.RecuperarSQL(sql);
             
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
     }
 }

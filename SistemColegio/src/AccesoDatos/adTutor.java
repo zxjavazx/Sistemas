@@ -139,7 +139,7 @@ public class adTutor {
         }
     }
     
-    public void EliminarArea(Tutor obj){
+    public void EliminarTutor(Tutor obj){
         try {
             String sql = "delete from tutor";
             sql = sql + " where";
